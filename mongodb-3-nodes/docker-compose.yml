@@ -11,7 +11,7 @@ services:
       - 27017:27017
     networks:
       - mongo-cluster
-    command: mongod --replSet rs0 
+    command: mongod --replSet rs0 --bind_ip localhost,mongo1
     volumes:
       - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
       - mongo1_data:/data/db
@@ -24,7 +24,7 @@ services:
       - 27018:27017
     networks:
       - mongo-cluster
-    command: mongod --replSet rs0
+    command: mongod --replSet rs0 --bind_ip localhost,mongo2
     volumes:
       - mongo2_data:/data/db
 
@@ -36,7 +36,7 @@ services:
       - 27019:27017
     networks:
       - mongo-cluster
-    command: mongod --replSet rs0
+    command: mongod --replSet rs0 --bind_ip localhost,mongo3
     volumes:
       - mongo3_data:/data/db
 
