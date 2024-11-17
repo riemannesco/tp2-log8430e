@@ -13,7 +13,6 @@ services:
       - mongo-cluster
     command: mongod --replSet rs0 --bind_ip localhost,mongo1
     volumes:
-      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
       - mongo1_data:/data/db
 
   mongo2:

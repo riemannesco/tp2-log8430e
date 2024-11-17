@@ -7,10 +7,3 @@ rs.initiate({
      ]
 });
 
-db.products.insert(
-   [
-     { _id: 11, item: "pencil", qty: 50, type: "no.2" },
-     { item: "pen", qty: 20 },
-     { item: "eraser", qty: 25 }
-   ]
-)
