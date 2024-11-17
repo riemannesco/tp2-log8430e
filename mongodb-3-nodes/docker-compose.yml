@@ -1,0 +1,46 @@
+networks:
+  mongo-cluster:
+    driver: bridge
+
+services:
+  mongo1:
+    image: mongo:latest
+    hostname: mongo1
+    container_name: mongo1
+    ports: 
+      - 27017:27017
+    networks:
+      - mongo-cluster
+    command: mongod --replSet rs0 
+    volumes:
+      - /home/baptiste/poly/log8430/tp2/mongodb-3-nodes/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+      - mongo1_data:/data/db
+
+  mongo2:
+    image: mongo:latest
+    hostname: mongo2
+    container_name: mongo2
+    ports: 
+      - 27018:27017
+    networks:
+      - mongo-cluster
+    command: mongod --replSet rs0
+    volumes:
+      - mongo2_data:/data/db
+
+  mongo3:
+    image: mongo:latest
+    hostname: mongo3
+    container_name: mongo3
+    ports: 
+      - 27019:27017
+    networks:
+      - mongo-cluster
+    command: mongod --replSet rs0
+    volumes:
+      - mongo3_data:/data/db
+
+volumes:
+  mongo1_data:
+  mongo2_data:
+  mongo3_data:
