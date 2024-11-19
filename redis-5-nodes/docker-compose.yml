@@ -19,7 +19,7 @@ services:
     hostname: redis1
     container_name: redis1
     ports:
-      - 27017:27017
+      - 27017:7000
     networks:
       - redis-cluster
     volumes:
@@ -32,7 +32,7 @@ services:
     hostname: redis2
     container_name: redis2
     ports:
-      - 27018:27018
+      - 27018:6379
     networks:
       - redis-cluster
     volumes:
@@ -46,7 +46,7 @@ services:
     hostname: redis3
     container_name: redis3
     ports:
-      - 27019:27019
+      - 27019:6379
     networks:
       - redis-cluster
     volumes:
@@ -60,7 +60,7 @@ services:
     hostname: redis4
     container_name: redis4
     ports:
-      - 27020:27020
+      - 27020:6379
     networks:
       - redis-cluster
     volumes:
@@ -74,7 +74,7 @@ services:
     hostname: redis5
     container_name: redis5
     ports:
-      - 27021:27021
+      - 27021:6379
     networks:
       - redis-cluster
     volumes:

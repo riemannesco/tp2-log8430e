@@ -7,26 +7,18 @@ networks:
           gateway: 172.18.0.1
 
 volumes:
-  redisinsight:
   redis1_data:
   redis2_data:
   redis3_data:
 
 services:
-  redis_insight:
-    image: redis/redisinsight:latest
-    container_name: redis_insight
-    ports:
-      - 27016:5540
-      # networks:
-      #   - redis-cluster
 
   redis1:
     image: redis:latest
     hostname: redis1
     container_name: redis1
     ports:
-      - 27017:27017
+      - 27017:7000
     networks:
       - redis-cluster
     volumes:
@@ -39,7 +31,7 @@ services:
     hostname: redis2
     container_name: redis2
     ports:
-      - 27018:27018
+      - 27018:6379
     networks:
       - redis-cluster
     volumes:
@@ -53,7 +45,7 @@ services:
     hostname: redis3
     container_name: redis3
     ports:
-      - 27019:27019
+      - 27019:6379
     networks:
       - redis-cluster
     volumes:
