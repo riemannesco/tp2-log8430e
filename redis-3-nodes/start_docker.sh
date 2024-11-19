@@ -2,4 +2,5 @@
 
 docker-compose down
 docker-compose build
-docker-compose up
+docker network prune
+docker-compose up -d
