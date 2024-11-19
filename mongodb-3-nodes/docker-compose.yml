@@ -39,6 +39,20 @@ services:
     volumes:
       - mongo3_data:/data/db
 
+  mongo-express:
+    image: mongo-express:latest
+    networks:
+      - mongo-cluster
+    environment:
+      - ME_CONFIG_MONGODB_SERVER=mongo1
+      - ME_CONFIG_MONGODB_PORT=27017
+    hostname: mongo-express
+    container_name: mongo-express
+    ports:
+      - 8081:8081
+    depends_on:
+      - mongo1
+
 volumes:
   mongo1_data:
   mongo2_data:

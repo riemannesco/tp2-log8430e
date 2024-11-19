@@ -1,0 +1,33 @@
+/usr/lib/jvm/jdk-11.0.25/bin/java  -classpath /home/baptiste/poly/log8430/tp2/ycsb-0.17.0/conf:/home/baptiste/poly/log8430/tp2/ycsb-0.17.0/lib/core-0.17.0.jar:/home/baptiste/poly/log8430/tp2/ycsb-0.17.0/lib/HdrHistogram-2.1.4.jar:/home/baptiste/poly/log8430/tp2/ycsb-0.17.0/lib/htrace-core4-4.1.0-incubating.jar:/home/baptiste/poly/log8430/tp2/ycsb-0.17.0/lib/jackson-core-asl-1.9.4.jar:/home/baptiste/poly/log8430/tp2/ycsb-0.17.0/lib/jackson-mapper-asl-1.9.4.jar:/home/baptiste/poly/log8430/tp2/ycsb-0.17.0/mongodb-binding/lib/logback-classic-1.1.2.jar:/home/baptiste/poly/log8430/tp2/ycsb-0.17.0/mongodb-binding/lib/logback-core-1.1.2.jar:/home/baptiste/poly/log8430/tp2/ycsb-0.17.0/mongodb-binding/lib/mongodb-async-driver-2.0.1.jar:/home/baptiste/poly/log8430/tp2/ycsb-0.17.0/mongodb-binding/lib/mongodb-binding-0.17.0.jar:/home/baptiste/poly/log8430/tp2/ycsb-0.17.0/mongodb-binding/lib/mongo-java-driver-3.8.0.jar:/home/baptiste/poly/log8430/tp2/ycsb-0.17.0/mongodb-binding/lib/slf4j-api-1.7.25.jar:/home/baptiste/poly/log8430/tp2/ycsb-0.17.0/mongodb-binding/lib/snappy-java-1.1.7.1.jar site.ycsb.Client -t -db site.ycsb.db.MongoDbClient -s -P workloads/workloada
+mongo client connection created with mongodb://localhost:27017/ycsb?w=1
+[OVERALL], RunTime(ms), 1596
+[OVERALL], Throughput(ops/sec), 626.5664160401003
+[TOTAL_GCS_G1_Young_Generation], Count, 1
+[TOTAL_GC_TIME_G1_Young_Generation], Time(ms), 9
+[TOTAL_GC_TIME_%_G1_Young_Generation], Time(%), 0.5639097744360901
+[TOTAL_GCS_G1_Old_Generation], Count, 0
+[TOTAL_GC_TIME_G1_Old_Generation], Time(ms), 0
+[TOTAL_GC_TIME_%_G1_Old_Generation], Time(%), 0.0
+[TOTAL_GCs], Count, 1
+[TOTAL_GC_TIME], Time(ms), 9
+[TOTAL_GC_TIME_%], Time(%), 0.5639097744360901
+[READ], Operations, 501
+[READ], AverageLatency(us), 932.1996007984031
+[READ], MinLatency(us), 481
+[READ], MaxLatency(us), 11639
+[READ], 95thPercentileLatency(us), 1587
+[READ], 99thPercentileLatency(us), 1871
+[READ], Return=OK, 501
+[CLEANUP], Operations, 1
+[CLEANUP], AverageLatency(us), 3331.0
+[CLEANUP], MinLatency(us), 3330
+[CLEANUP], MaxLatency(us), 3331
+[CLEANUP], 95thPercentileLatency(us), 3331
+[CLEANUP], 99thPercentileLatency(us), 3331
+[UPDATE], Operations, 499
+[UPDATE], AverageLatency(us), 1129.7615230460922
+[UPDATE], MinLatency(us), 569
+[UPDATE], MaxLatency(us), 73407
+[UPDATE], 95thPercentileLatency(us), 1497
+[UPDATE], 99thPercentileLatency(us), 1972
+[UPDATE], Return=OK, 499
