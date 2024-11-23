@@ -18,7 +18,7 @@ services:
     hostname: redis1
     container_name: redis1
     ports:
-      - 27017:7000
+      - 27017:6379
     networks:
       - redis-cluster
     volumes:
@@ -36,7 +36,7 @@ services:
       - redis-cluster
     volumes:
       - redis2_data:/data/db
-    command: redis-server --slaveof 172.18.0.2 7000
+    command: redis-server --slaveof 172.18.0.2 6379
     depends_on:
       - redis1
 
@@ -50,6 +50,6 @@ services:
       - redis-cluster
     volumes:
       - redis3_data:/data/db
-    command: redis-server --slaveof 172.18.0.2 7000
+    command: redis-server --slaveof 172.18.0.2 6379
     depends_on:
       - redis1
